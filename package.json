@@ -1,0 +1,20 @@
+{
+  "name": "ephemeral-monograph",
+  "version": "0.0.0",
+"private": true,
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambacha/sbacha.net.git"
+  },
+  "keywords": [],
+  "author": "sam bacha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sambacha/sbacha.net/issues"
+  },
+  "homepage": "https://github.com/sambacha/sbacha.net#readme"
+}
