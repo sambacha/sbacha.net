@@ -1,11 +1,10 @@
 {
   "name": "ephemeral-monograph",
   "version": "0.0.0",
-"private": true,
+  "private": true,
   "description": "blog",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sambacha/sbacha.net.git"
@@ -16,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sambacha/sbacha.net/issues"
   },
-  "homepage": "https://github.com/sambacha/sbacha.net#readme"
+  "homepage": "https://github.com/sambacha/sbacha.net#readme",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
