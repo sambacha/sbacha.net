@@ -1,0 +1,1 @@
+hugo --ignoreCache --forceSyncStatic --gc -e production --enableGitInfo --buildDrafts --buildFuture
