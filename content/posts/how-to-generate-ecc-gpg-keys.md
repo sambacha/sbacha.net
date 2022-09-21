@@ -4,8 +4,8 @@ date: 2021-09-11T16:00:00-07:00
 summary: "Generating non-RSA GPG Keys (e.g. Ed25519) is not a straightforward process. This guide outlines the process step by step with best practices."
 ---
 
-
 # GPG ECC Key Generation
+
 > [source documentation](https://www.gniibe.org/memo/software/gpg/keygen-25519.html)
 
 ## Overview
@@ -35,16 +35,13 @@ Anyhow, here is the how to.
 
 ## Preparation
 
--   Development version of libgcrypt: git.gnupg.org
-    
-    You need to clone the master branch and build and install it by
-yourself (from source). Here, we assume that it's installed in
-/usr/local.
-    
--   GnuPG 2.1.7 or later
-    
-    In Debian experimental, we have gnupg2 package.
-    
+- Development version of libgcrypt: git.gnupg.org
+      You need to clone the master branch and build and install it by
+  yourself (from source). Here, we assume that it's installed in
+  /usr/local.
+- GnuPG 2.1.7 or later
+
+  In Debian experimental, we have gnupg2 package.
 
 ## Example session log
 
@@ -59,6 +56,7 @@ $ export LD_LIBRARY_PATH=/usr/local/lib
 $ gpg-connect-agent KILLAGENT /bye
 OK closing connection
 ```
+
 Next, we invoke gpg frontend with --expert and --full-gen-key option.
 
 ```bash
@@ -67,6 +65,7 @@ gpg (GnuPG) 2.1.8; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 ```
+
 Then, we input 9 to select ECC primary key and ECC encryption subkey.
 
 ```bash
@@ -82,6 +81,7 @@ Please select what kind of key you want:
   (11) ECC (set your own capabilities)
 Your selection? 9
 ```
+
 Next is the important selection. We input 1 to select "Curve25519".
 
 ```bash
@@ -96,13 +96,16 @@ Please select which elliptic curve you want:
    (8) secp256k1
 Your selection? 1
 ```
+
 You'll see WARNING, but it is what you want.
 
 ```bash
 gpg: WARNING: Curve25519 is not yet part of the OpenPGP standard.
 Use this curve anyway? (y/N) y
 ```
+
 It asks about expiration of key.
+
 ```bash
 Please specify how long the key should be valid.
          0 = key does not expire
@@ -114,6 +117,7 @@ Key is valid for? (0)
 Key does not expire at all
 Is this correct? (y/N) y
 ```
+
 Then, it asks about a user ID.
 
 ```bash
@@ -129,6 +133,7 @@ Lastly, it asks confirmation.
 
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
 ```
+
 Then, it goes like this.
 
 ```bash
@@ -141,6 +146,7 @@ some other action (type on the keyboard, move the mouse, utilize the
 disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 ```
+
 It asks the passphrase for keys by pop-up window, and then, finishes.
 
 ```bash
@@ -159,7 +165,7 @@ uid         [ultimate] Kunisada Chuji <chuji@gniibe.org>
 sub   cv25519/DF7B31B1 2015-09-11
 ```
 
-ed25519/7C406DB5 is the primary key, and 
+ed25519/7C406DB5 is the primary key, and
 cv25519/DF7B31B1 is encryption subkey.
 
 Next, we add authentication subkey which can be used with OpenSSH. We
@@ -168,6 +174,7 @@ invoke gpg frontend with --edit-key and the key ID.
 ```bash
 $ gpg2 --expert --edit-key 7C406DB5
 ```
+
 ```sh
 gpg (GnuPG) 2.1.8; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -182,11 +189,15 @@ ssb  cv25519/DF7B31B1
      created: 2015-09-11  expires: never       usage: E
 [ultimate] (1). Kunisada Chuji <chuji@gniibe.org>
 ```
+
 We invoke addkey subcommand.
+
 ```bash
 gpg> addkey
 ```
+
 It asks a kind of key, we input 11 to select ECC for authentication.
+
 ```bash
 Please select what kind of key you want:
    (3) DSA (sign only)
@@ -201,7 +212,9 @@ Please select what kind of key you want:
   (13) Existing key
 Your selection? 11
 ```
+
 and then, we specify "Authenticate" capability.
+
 ```bash
 Possible actions for a ECDSA key: Sign Authenticate
 Current allowed actions: Sign
@@ -243,7 +256,9 @@ Please select which elliptic curve you want:
    (8) secp256k1
 Your selection? 1
 ```
+
 It asks confirmation. We say y.
+
 ```bash
 gpg: WARNING: Curve25519 is not yet part of the OpenPGP standard.
 Use this curve anyway? (y/N) y
@@ -264,7 +279,9 @@ And the confirmation.
 
 Really create? (y/N) y
 ```
+
 It goes.
+
 ```bash
 We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
@@ -282,7 +299,9 @@ ssb  ed25519/8679DF5F
      created: 2015-09-11  expires: never       usage: A
 [ultimate] (1). Kunisada Chuji <chuji@gniibe.org>
 ```
+
 We type save to exit form gpg.
+
 ```bash
 gpg> save
 ```

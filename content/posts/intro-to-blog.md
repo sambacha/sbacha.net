@@ -2,11 +2,10 @@
 title: The Game Theory of Money, Part 1
 date: 2021-09-10T16:04:52-07:00
 ---
+
 # The Game Theory of Money, Part 1
 
-
 > [reference]: https://www.unqualified-reservations.org/archive/john_law_safehaven.html](https://www.unqualified-reservations.org/archive/john_law_safehaven.html "The Game Theory of Money, Part 1"
-
 
 ---
 
