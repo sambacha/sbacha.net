@@ -1,7 +1,7 @@
 ---
 title: "How to Generate Ecc Gpg Keys"
-date: 2021-09-11T16:00:00-07:00
-summary: "Generating non-RSA GPG Keys (e.g. Ed25519) is not a straightforward process. This guide outlines the process step by step with best practices."
+date: 2022-09-11T16:00:00-07:00
+summary: "Generating non-RSA GPG Keys (e.g. Ed25519)."
 ---
 
 # GPG ECC Key Generation
@@ -305,5 +305,3 @@ We type save to exit form gpg.
 ```bash
 gpg> save
 ```
-
-### Note
