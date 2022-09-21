@@ -4,8 +4,7 @@ date: 2021-09-10T16:30:31-07:00
 summary: "Solidity is an object-oriented, high-level language for implementing smart contracts. Smart contracts are programs which govern the behaviour of accounts within the Ethereum state."
 ---
 
-# Testing Highlighting 
-
+# Testing Highlighting
 
 ```solidity
 contract Sqrt {
@@ -33,3 +32,4 @@ contract Sqrt {
     } else y = 0;
   }
 }
+```

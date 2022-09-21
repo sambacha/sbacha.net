@@ -3,7 +3,7 @@ title: German Hyperinflation
 date: 2021-11-10T16:04:52-07:00
 ---
 
-# Hyperinflation in the Weimar Republic 
+# Hyperinflation in the Weimar Republic
 
 Finally, a brief word on a favorite example of advocates of private control over
 money issuance, the German hyperinflation of 1923, which was supposedly caused by
@@ -27,7 +27,8 @@ significantly reduced unrealistically high reparations payments.This episode can
 therefore clearly not be blamed on excessive money printing by a government-run
 central bank, but rather on a combination of excessive reparations claims and of
 massive money creation by private speculators, aided and abetted by a
-private central bank. 
+private central bank.
 
 ### sources
+
 [_The Chicago Plan Revisited_, Jaromir Benes and Michael Kumhof; page 16,](https://www.imf.org/external/pubs/ft/wp/2012/wp12202.pdf)
